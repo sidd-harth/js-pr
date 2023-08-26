@@ -16,16 +16,16 @@ async function run() {
     const { owner, repo, number } = context.issue;
     const prComment = await giphy.random('funny');
 
-    const commentResponse = await octokit.issues.createComment({
+    await octokit.issues.createComment({
       owner,
       repo,
       issue_number: number,
-      body: `
-        Thank you for the PR. We will get it reviewed and update. \n
-        ![Giphy]( ${prComment.data.images.downsized.url} )`
+      body: `![Giphy]( ${prComment.data.images.downsized.url} )`
     });
 
-    const commentUrl = prComment.data.images.downsized.url;
+    console.log("asdasd ", prComment.data.image_url)
+    //const commentUrl = prComment.data.images.downsized.url;
+    console.log("asdasdasdas -- ", prComment.data.images.downsized.url)
     core.setOutput('comment-url', prComment.data.images.downsized.url);
 
     console.log(`Giphy GIF comment added successfully! Comment URL: ${commentUrl}`);
