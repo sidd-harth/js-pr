@@ -13784,13 +13784,18 @@ async function run() {
 
     const context = github.context;
     const { owner, repo, number } = context.issue;
-    const prComment = await giphy.random('animals');
+    const prComment = await giphy.random('thank you');
+  //  const prMessage = 
 
     await octokit.issues.createComment({
       owner,
       repo,
       issue_number: number,
-      body: `![Giphy]( ${prComment.data.images.downsized.url} )`
+      body: `
+            👋 Hi! Thank you for this contribution!. \n \n
+            PR - #${number} has been assigned. \n \n
+            ![Giphy]( ${prComment.data.images.downsized.url} )
+            `
     });
 
     //const commentUrl = prComment.data.images.downsized.url;
@@ -13804,12 +13809,12 @@ async function run() {
       assignees: ["msrevathi"]
     });
 
-    await octokit.issues.addAssignees({
-      owner,
-      repo,
-      issue_number: number,
-      labels: ["bug","enhancement"]
-    });
+    // await octokit.issues.addAssignees({
+    //   owner,
+    //   repo,
+    //   issue_number: number,
+    //   labels: ["bug","enhancement"].name
+    // });
 
   } catch (error) {
     console.error('Error:', error);
