@@ -13792,8 +13792,8 @@ async function run() {
       repo,
       issue_number: number,
       body: `
-            👋 Hi! Thank you for this contribution!. \n \n
-            PR - #${number} has been assigned. \n \n
+            👋 Hi! Thank you for this contribution!.
+            PR - #${number} has been assigned.
             ![Giphy]( ${prComment.data.images.downsized.url} )
             `
     });
