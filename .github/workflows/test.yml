@@ -1,0 +1,24 @@
+on:
+  pull_request: 
+        types:
+         - opened
+         - assigned
+         - unassigned
+jobs:
+
+  test:
+   
+    runs-on: ubuntu-latest
+    name: A test job
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Test just output the message
+      uses: ./
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
