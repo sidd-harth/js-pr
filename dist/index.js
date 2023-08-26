@@ -13791,7 +13791,7 @@ async function run() {
       owner,
       repo,
       issue_number: number,
-      body: `### PR - $pull_request_number has been assigned. \n ![Giphy](${prComment.data.images.downsized.url}) \n ### 🎉 Thank you for this contribution!`
+      body: `### PR - ${pull_request_number} has been assigned. \n ![Giphy](${prComment.data.images.downsized.url}) \n ### 🎉 Thank you for this contribution!`
     });
 
     //const commentUrl = prComment.data.images.downsized.url;
