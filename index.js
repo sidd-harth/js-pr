@@ -21,11 +21,7 @@ async function run() {
       owner,
       repo,
       issue_number: number,
-      body: `
-            👋 Hi! Thank you for this contribution!.
-            PR - #${number} has been assigned.
-            ![Giphy]( ${prComment.data.images.downsized.url} )
-            `
+      body: `👋 Hi! Thank you for this contribution! \n PR - #${number} has been assigned. \n ![Giphy](${prComment.data.images.downsized.url})`
     });
 
     //const commentUrl = prComment.data.images.downsized.url;
