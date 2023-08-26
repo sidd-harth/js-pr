@@ -25,8 +25,8 @@ async function run() {
         ![Giphy]( ${prComment.data.images.downsized.url} )`
     });
 
-    const commentUrl = commentResponse.data.images.downsized.url;
-    core.setOutput('comment-url', commentUrl);
+    //const commentUrl = commentResponse.data.images.downsized.url;
+    core.setOutput('comment-url', commentResponse.data.images.downsized.url);
 
     console.log(`Giphy GIF comment added successfully! Comment URL: ${commentUrl}`);
   } catch (error) {
