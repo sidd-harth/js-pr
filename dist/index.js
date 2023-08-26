@@ -13784,7 +13784,7 @@ async function run() {
 
     const context = github.context;
     const { owner, repo, number } = context.issue;
-    const prComment = await giphy.random('funny');
+    const prComment = await giphy.random('animals');
 
     await octokit.issues.createComment({
       owner,
