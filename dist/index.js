@@ -13790,7 +13790,9 @@ async function run() {
       owner,
       repo,
       issue_number: number,
-      body: `![Giphy]( ${prComment.data.images.downsized.url} )`
+      body: `
+        Thank you for the PR. We will get it reviewed and update. \n
+        ![Giphy]( ${prComment.data.images.downsized.url} )`
     });
 
     const commentUrl = commentResponse.data.images.downsized.url;

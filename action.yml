@@ -11,5 +11,5 @@ outputs:
   comment-url:
     description: 'URL of the Giphy GIF comment added to the pull request.'
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'dist/index.js'
