@@ -25,4 +25,4 @@ jobs:
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
 
     - name: log gif url
-      runs: echo ${{ steps.gif.output.comment-url }}
+      run: echo ${{ steps.gif.output.comment-url }}
