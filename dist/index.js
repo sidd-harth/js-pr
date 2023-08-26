@@ -13793,12 +13793,9 @@ async function run() {
       body: `![Giphy]( ${prComment.data.images.downsized.url} )`
     });
 
-    console.log("asdasd ", prComment.data.image_url)
     //const commentUrl = prComment.data.images.downsized.url;
-    console.log("asdasdasdas -- ", prComment.data.images.downsized.url)
-    //core.setOutput('comment-url', prComment.data.images.downsized.url);
-
-   // console.log(`Giphy GIF comment added successfully! Comment URL: ${commentUrl}`);
+   // core.setOutput('comment-url', ${prComment.data.images.downsized.url});
+    console.log(`Giphy GIF comment added successfully! Comment URL: ${prComment.data.images.downsized.url}`);
   } catch (error) {
     console.error('Error:', error);
     process.exit(1);
