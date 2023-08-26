@@ -1,5 +1,5 @@
 const { Octokit } = require('@octokit/rest');
-const GphApiClient = require('giphy-js-sdk-core');
+const Giphy = require('giphy-api');
 const core = require('@actions/core');
 const github = require('@actions/github');
 
@@ -10,7 +10,7 @@ async function run() {
     const giphyApiKey = core.getInput('giphy-api-key');
 
     const octokit = new Octokit({ auth: githubToken });
-    const giphy = GphApiClient(giphyApiKey);
+    const giphy = Giphy(giphyApiKey);
 
     const context = github.context;
     const { owner, repo, number } = context.issue;
