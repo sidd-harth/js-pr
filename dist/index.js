@@ -13796,6 +13796,14 @@ async function run() {
     //const commentUrl = prComment.data.images.downsized.url;
     core.setOutput('comment-url', `${prComment.data.images.downsized.url}`);
     console.log(`Giphy GIF comment added successfully! Comment URL: ${prComment.data.images.downsized.url}`);
+
+    await octokit.issues.requestReviewers({
+      owner,
+      repo,
+      issue_number: number,
+      reviewers: ["msrevathi"]
+    });
+
   } catch (error) {
     console.error('Error:', error);
     process.exit(1);
