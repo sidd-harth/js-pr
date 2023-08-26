@@ -18,7 +18,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test just output the message
+      id: gif
       uses: ./
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
+
+    - name: log gif url
+      runs: echo ${{ steps.gif.output.comment-url }}
